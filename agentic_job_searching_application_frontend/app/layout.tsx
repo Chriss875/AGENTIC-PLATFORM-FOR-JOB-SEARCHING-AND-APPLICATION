@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-
+import {TooltipProvider} from "@/components/ui/tooltip";
 
 
 const roboto = Roboto({
@@ -21,7 +21,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className="h-full antialiased"
     >
       <body className={`${roboto.className} min-h-full flex flex-col`}>
+        <TooltipProvider>
   {children}
+  </TooltipProvider>
 </body>
     </html>
   );
