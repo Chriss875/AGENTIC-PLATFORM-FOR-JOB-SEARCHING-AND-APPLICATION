@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import {TooltipProvider} from "@/components/ui/tooltip";
 
 
-const roboto = Roboto({
+const geist = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -18,9 +18,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className="h-full antialiased"
+      className={`${geist.variable} h-full antialiased`}
     >
-      <body className={`${roboto.className} min-h-full flex flex-col`}>
+      <body className="min-h-full flex flex-col font-sans">
         <TooltipProvider>
   {children}
   </TooltipProvider>
